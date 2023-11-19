@@ -4,7 +4,7 @@ function App() {
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  const [isValid, setIsValid] = useState(false);
   const [errorDay, setErrorDay] = useState(false);
   const [errorMont, setErrorMont] = useState(false);
   const [errorYear, setErrorYear] = useState(false);
@@ -119,9 +119,9 @@ function App() {
               </label>
             </section>
             {isValid ? (
-              <p></p>
-            ) : (
               <p className="erro">Please provide a valid date</p>
+              ) : (
+              <p></p>
             )}
           </section>
           <section id="sumbit-section">
