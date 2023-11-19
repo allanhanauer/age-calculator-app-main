@@ -126,7 +126,7 @@ function App() {
           </section>
           <section id="sumbit-section">
             <div id="line"></div>
-            <button id="submit-inp" type="submit"></button>
+            <button id="submit-inp" type="submit">|</button>
           </section>
         </form>
         <section className="result">

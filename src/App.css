@@ -12,7 +12,8 @@ main {
   flex-direction: column;
   background-color: var(--clr-White);
   border-radius: 25px 25px 196px 17px;
-  min-width: 600px;
+  min-width: 630px;
+  transition: 1.5s;
   padding: 28px;
   height: 650px;
   width: 60%;
@@ -83,6 +84,7 @@ main #date-form #sumbit-section #line {
 }
 main #date-form #sumbit-section #submit-inp {
   border: none;
+  color:white;
   transition: 0.6s;
   height: 96px;
   width: 96px;
@@ -102,6 +104,7 @@ main .result h1 {
   font-style: italic;
   font-weight: 800;
   line-height: 7rem;
+  transition: 1s;
 }
 main .result h1 span {
   color: var(--clr-purple);
@@ -129,6 +132,7 @@ footer a {
   text-decoration: none;
 }
 @media only screen and (max-width: 600px) {
+
   main {
     min-width: 345px;
     max-height: 487px;
