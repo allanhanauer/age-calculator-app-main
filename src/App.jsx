@@ -32,18 +32,32 @@ function App() {
       bithDate.setDate(day);
       bithDate.setMonth(month - 1);
       bithDate.setFullYear(year);
-      console.log(bithDate)
-      console.log(atualDate)
-      let dia = Math.floor(((bithDate - atualDate)*-1) / (1000 * 60 * 60 * 24));
+      console.log(bithDate);
+      console.log(atualDate);
+      let bia = bithDate.getFullYear();
+      let bif = atualDate.getFullYear();
+      let biss = 0;
+      for (let i = bia; i < bif + 1; i++) {
+        if (i % 4 == 0 && i % 100 != 0 && i % 400 != 0) {
+          biss += 1;
+        }
+      }
+      let dia = Math.floor(
+        ((bithDate - atualDate) * -1) / (1000 * 60 * 60 * 24)
+      );
       let a = Math.floor(dia / 365);
-      dia = dia%365
+      dia = dia % 365;
       let b = Math.floor(dia / 30);
-      dia = dia%30
-      let c = dia;
+      dia = dia % 30;
+      let c = 0;
+      if (dia - biss < 0) {
+        c = dia - biss;
+        c = c + 30;
+        b -= 1;
+      } else {
+        c = dia - biss;
+      }
       console.log(bithDate - atualDate);
-      console.log(b);
-      console.log(c);
-
       setYearOut(`${a}`);
       setMonthOut(`${b}`);
       setDayOut(`${c}`);
@@ -120,13 +134,15 @@ function App() {
             </section>
             {isValid ? (
               <p className="erro">Please provide a valid date</p>
-              ) : (
+            ) : (
               <p></p>
             )}
           </section>
           <section id="sumbit-section">
             <div id="line"></div>
-            <button id="submit-inp" type="submit">|</button>
+            <button id="submit-inp" type="submit">
+              |
+            </button>
           </section>
         </form>
         <section className="result">
